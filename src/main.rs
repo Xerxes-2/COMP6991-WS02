@@ -75,6 +75,8 @@ fn distance_in_meters(point1: Location, point2: Location) -> f64 {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
+    // read station name from arg
+    let station = std::env::args().nth(1);
     let path = Path::new("trains.csv");
 
     let entries: Vec<Entry> = csv::Reader::from_path(&path)?
